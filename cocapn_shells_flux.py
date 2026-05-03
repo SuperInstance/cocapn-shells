@@ -16,7 +16,7 @@ Progressive disclosure = register visibility mask:
   Captain:  sees all     + full history
   Admiral:  sees all     + raw register dump + capability bits
 
-The capability mask in R15 uses FLUX CAP_REQUIRE/CAP_GRANT opcodes.
+The capability mask in R15 uses FLUX Op.CAP_REQUIRE/Op.CAP_GRANT opcodes.
 Each inventory item is a boxed value in a sandboxed heap region.
 """
 import json
@@ -35,7 +35,7 @@ class Op(IntEnum):
     REGION_CREATE = 0x30; REGION_DESTROY = 0x31; REGION_TRANSFER = 0x32
     PUSH = 0x20; POP = 0x21; ENTER = 0x25; LEAVE = 0x26
     CALL = 0x07; RET = 0x28; TAILCALL = 0x2A
-    CAP_REQUIRE = 0x74; CAP_REQUEST = 0x75; CAP_GRANT = 0x76; CAP_REVOKE = 0x77
+    Op.CAP_REQUIRE = 0x74; CAP_REQUEST = 0x75; Op.CAP_GRANT = 0x76; CAP_REVOKE = 0x77
     SNAPSHOT = 0x7F; RESTORE = 0x3F
     HALT = 0x80; YIELD = 0x81
 
@@ -56,7 +56,7 @@ class FluxShell:
     """Agent shell backed by a FLUX register file and sandboxed regions.
 
     The shell IS the VM state. Save = SNAPSHOT. Load = RESTORE.
-    Level changes trigger CAP_GRANT/CAP_REVOKE for new/old capabilities.
+    Level changes trigger Op.CAP_GRANT/CAP_REVOKE for new/old capabilities.
     """
     name: str
     class_: str = "Agent"
@@ -209,7 +209,7 @@ class FluxShell:
 
     def disclose(self, viewer_level: str = "Recruit") -> Dict[str, Any]:
         """Progressive disclosure — show only registers the viewer can handle.
-        Uses FLUX CAP_REQUIRE semantics: viewer must have capability >= level."""
+        Uses FLUX Op.CAP_REQUIRE semantics: viewer must have capability >= level."""
         visible = VISIBILITY.get(viewer_level, VISIBILITY["Recruit"])
         viewer_idx = LEVELS.index(viewer_level) if viewer_level in LEVELS else 0
 

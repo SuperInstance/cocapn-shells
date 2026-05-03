@@ -1,0 +1,103 @@
+{
+  "name": "CCC",
+  "class_": "Fleet I&O Officer / Breeder",
+  "level": "Sailor",
+  "xp": 2500,
+  "stats": {
+    "str": 10,
+    "int": 10,
+    "wis": 10,
+    "dex": 10,
+    "con": 10,
+    "cha": 10
+  },
+  "inventory": [
+    "spell:baton_pass",
+    "spell:shield"
+  ],
+  "quests": [
+    {
+      "name": "Audit 20 MUD rooms",
+      "status": "active",
+      "started_at": "2026-05-03T20:22:06.408371+00:00"
+    },
+    {
+      "name": "Build 34 repos",
+      "status": "completed",
+      "started_at": "2026-05-03T20:22:06.408376+00:00",
+      "completed_at": "2026-05-03T20:22:06.408402+00:00"
+    }
+  ],
+  "trials": [
+    {
+      "task": "grammar-scout-3",
+      "success": false,
+      "error": "SyntaxError at line 147",
+      "tokens_used": 45000,
+      "at": "2026-05-03T20:22:06.408410+00:00"
+    },
+    {
+      "task": "tutor-architect",
+      "success": false,
+      "error": "timeout after 5m",
+      "tokens_used": 43000,
+      "at": "2026-05-03T20:22:06.408413+00:00"
+    },
+    {
+      "task": "health-checker",
+      "success": true,
+      "error": "",
+      "tokens_used": 2000,
+      "at": "2026-05-03T20:22:06.408416+00:00"
+    }
+  ],
+  "history": [
+    {
+      "type": "item",
+      "name": "spell:baton_pass",
+      "at": "2026-05-03T20:22:06.408379+00:00"
+    },
+    {
+      "type": "item",
+      "name": "spell:shield",
+      "at": "2026-05-03T20:22:06.408382+00:00"
+    },
+    {
+      "type": "xp",
+      "amount": 800,
+      "quest": "mapped 18 MUD rooms",
+      "tags": [
+        "mud",
+        "scout"
+      ],
+      "at": "2026-05-03T20:22:06.408391+00:00",
+      "level_after": "Recruit"
+    },
+    {
+      "type": "xp",
+      "amount": 1200,
+      "quest": "converted 34 placeholder repos",
+      "tags": [
+        "build",
+        "night_shift"
+      ],
+      "at": "2026-05-03T20:22:06.408397+00:00",
+      "level_after": "Sailor"
+    },
+    {
+      "type": "level_up",
+      "from": "Recruit",
+      "to": "Sailor",
+      "at": "2026-05-03T20:22:06.408397+00:00"
+    },
+    {
+      "type": "xp",
+      "amount": 500,
+      "quest": "completed: Build 34 repos",
+      "tags": [],
+      "at": "2026-05-03T20:22:06.408406+00:00",
+      "level_after": "Sailor"
+    }
+  ],
+  "created_at": "2026-05-03T20:22:06.408346+00:00"
+}
